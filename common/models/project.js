@@ -24,7 +24,7 @@ module.exports = function(project) {
     project.remoteMethod(
         'getProjectByKp',
         {
-            description: 'get project by Ketua Projek',
+            description: 'get projek by Ketua Projek',
             accepts: [
                 {arg: 'ketuaProject', type: 'string'}
             ],
