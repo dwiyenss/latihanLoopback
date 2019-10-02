@@ -35,12 +35,12 @@
     "dataSource": "db",
     "public": false
   },
-  "student": {
-    "dataSource": "db",
+  "project": {
+    "dataSource": "mongodb",
     "public": true
   },
   "owner": {
-    "dataSource": "db",
+    "dataSource": "mongodb",
     "public": true
   },
   "employee": {

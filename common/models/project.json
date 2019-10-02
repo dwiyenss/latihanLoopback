@@ -1,25 +1,25 @@
 {
-  "name": "student",
+  "name": "project",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "nama":{
+    "idProject":{
       "type":"string",
       "required":true
     },
-    "jenisKelamin":{
+    "namaProject":{
       "type":"string"
     },
-    "tanggalLahir":{
+    "tanggalProject":{
       "type":"date"
     },
-    "nomorTelepon":{
+    "ketuaProject":{
       "type":"string"
     },
-    "email":{
+    "wakilProject":{
       "type":"string",
       "required":true
     }

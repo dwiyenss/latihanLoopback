@@ -1,10 +1,10 @@
 'use strict';
 
-module.exports = function(Owner) {
-    Owner.getOwnerById = function(id, callback){
+module.exports = function(project) {
+    project.getProjectByKp = function(ktProject, callback){
         new Promise(function(resolve, reject) {
             // find name
-            Owner.find({where : {ID : {like : id}}}, function(err, result){
+            project.find({where : {ketuaProject : {like : ktProject}}}, function(err, result){
                 if(err) reject(err);
                 if(result === null){
                     err = new Error("User Not Found");
@@ -21,17 +21,17 @@ module.exports = function(Owner) {
         });
     };
 
-    Owner.remoteMethod(
-        'getOwnerById',
+    project.remoteMethod(
+        'getProjectByKp',
         {
-            description: 'get user by name',
+            description: 'get project by Ketua Projek',
             accepts: [
-                {arg: 'id', type: 'string'}
+                {arg: 'ketuaProject', type: 'string'}
             ],
             returns:{
                 arg:'res', type: 'object', root: true
             },
-            http:{path: '/getOwnerById', verb: 'get'}
+            http:{path: '/getProjectByKp', verb: 'get'}
         }
     );
 };
