@@ -46,5 +46,9 @@
   "employee": {
     "dataSource": "mongodb",
     "public": true
+  },
+  "admin": {
+    "dataSource": "mongodb",
+    "public": true
   }
 }

@@ -1,10 +1,10 @@
 'use strict';
 
-module.exports = function(Employee) {
-    Employee.getEmployeeByName = function(name, callback){
+module.exports = function(Admin) {
+    Admin.getAdminByLevel = function(Level, callback){
         new Promise(function(resolve, reject) {
-            // find name
-            Employee.find({where : {nama : {like : name}}}, function(err, result){
+            // find Admin Level
+            Admin.find({where : {adminLevel : {like : Level}}}, function(err, result){
                 if(err) reject(err);
                 if(result === null){
                     err = new Error("User Not Found");
@@ -21,17 +21,18 @@ module.exports = function(Employee) {
         });
     };
 
-    Employee.remoteMethod(
-        'getEmployeeByName',
+    Admin.remoteMethod(
+        'getAdminByLevel',
         {
-            description: 'get user by name',
+            description: 'get Admin by Level',
             accepts: [
-                {arg: 'name', type: 'string'}
+                {arg: 'Level', type: 'string'}
             ],
             returns:{
                 arg:'res', type: 'object', root: true
             },
-            http:{path: '/getEmployeeByName', verb: 'get'}
+            http:{path: '/getAdminByLevel', verb: 'get'}
         }
     );
 };
+
